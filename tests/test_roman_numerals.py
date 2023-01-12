@@ -1,23 +1,9 @@
 from python_roman_numerals.roman_numerals import RomanNumerals
 
-
 class TestRomanNumerals:
-    def test_converts_one_to_i(self):
-        number = 1
-        assert RomanNumerals().convert(number) == "I"
+    def test_all_numbers_to_numerals(self):
+        numbers = [1,2,3,5,6,7]
+        numerals = ['I','II','III','V','VI','VII']
 
-    def test_converts_two_to_ii(self):
-        number = 2
-        assert RomanNumerals().convert(number) == "II"
-
-    def test_converts_two_to_iii(self):
-        number = 3
-        assert RomanNumerals().convert(number) == "III"
-
-    def test_converts_five_to_v(self):
-        number = 5
-        assert RomanNumerals().convert(number) == "V"
-
-    def test_converts_six_to_vi(self):
-        number = 6
-        assert RomanNumerals().convert(number) == "VI"
+        for i in range(len(numbers)):
+            assert RomanNumerals().convert(numbers[i]) == numerals[i]

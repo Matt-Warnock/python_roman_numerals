@@ -1,10 +1,9 @@
 class RomanNumerals:
     def convert(self, number: int) -> str:
+        numeral = ''
 
-        if number == 5:
-            return 'V'
+        if number >= 5:
+            numeral = 'V'
+            number -= 5
 
-        if number == 6:
-            return 'VI'
-
-        return 'I' * number
+        return numeral + 'I' * number
