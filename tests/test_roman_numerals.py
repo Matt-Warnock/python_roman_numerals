@@ -17,3 +17,7 @@ class TestRomanNumerals:
     def test_converts_five_to_v(self):
         number = 5
         assert RomanNumerals().convert(number) == "V"
+
+    def test_converts_six_to_vi(self):
+        number = 6
+        assert RomanNumerals().convert(number) == "VI"
