@@ -1,9 +1,25 @@
-from python_roman_numerals.roman_numerals import RomanNumerals
+import pytest
+
 
 class TestRomanNumerals:
-    def test_all_numbers_to_numerals(self):
-        numbers = [1,2,3,5,6,7]
-        numerals = ['I','II','III','V','VI','VII']
+    tests = [
+        (1, 'I'),
+        (2, 'II'),
+        (3, 'III'),
+        (5, 'V'),
+        (6, 'VI'),
+        (7, 'VII')
+    ]
 
-        for i in range(len(numbers)):
-            assert RomanNumerals().convert(numbers[i]) == numerals[i]
+    test_names = [
+        'Converts 1 to I',
+        'Converts 2 to II',
+        'Converts 3 to III',
+        'Converts 5 to V',
+        'Converts 6 to VI',
+        'Converts 7 to VII'
+    ]
+
+    @pytest.mark.parametrize('number, numeral', tests, ids=test_names)
+    def test_all_numbers_to_numerals(self, number, numeral, roman_numeral):
+        assert roman_numeral.convert(number) == numeral
