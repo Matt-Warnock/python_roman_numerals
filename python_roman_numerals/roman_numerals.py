@@ -1,11 +1,11 @@
 class RomanNumerals:
-    def convert(self, number: int) -> str:
-        numeral = ''
-        tuples = ((100, 'C'), (50, 'L'), (10, 'X'), (5, 'V'))
+    def convert(self, number_input: int) -> str:
+        numbers_to_numerals = ((100, 'C'), (50, 'L'), (10, 'X'), (5, 'V'))
+        result = ''
 
-        for tup in tuples:
-            while number >= tup[0]:
-                numeral += tup[1]
-                number -= tup[0]
+        for (number, numeral) in numbers_to_numerals:
+            while number_input >= number:
+                result += numeral
+                number_input -= number
 
-        return numeral + 'I' * number
+        return result + 'I' * number_input
