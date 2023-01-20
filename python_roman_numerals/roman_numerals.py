@@ -2,6 +2,10 @@ class RomanNumerals:
     def convert(self, number: int) -> str:
         numeral = ''
 
+        while number >= 100:
+            numeral += 'C'
+            number -= 100
+
         if number >= 50:
             numeral += 'L'
             number -= 50
