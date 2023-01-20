@@ -9,7 +9,8 @@ class TestRomanNumerals:
         (5, 'V'),
         (6, 'VI'),
         (7, 'VII'),
-        (10, 'X')
+        (10, 'X'),
+        (20, 'XX')
     ]
 
     test_names = [
@@ -19,7 +20,8 @@ class TestRomanNumerals:
         'Converts 5 to V',
         'Converts 6 to VI',
         'Converts 7 to VII',
-        'Converts 10 to X'
+        'Converts 10 to X',
+        'Converts 20 to XX'
     ]
 
     @pytest.mark.parametrize('number, numeral', tests, ids=test_names)
